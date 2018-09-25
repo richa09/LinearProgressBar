@@ -80,7 +80,7 @@ open class LinearProgressBar: UIView {
         context.setLineWidth(lineWidth)
         context.move(to: begin)
         context.addLine(to: end)
-        context.setLineCap(.round)
+        context.setLineCap(.square)
         context.strokePath()
     }
 
@@ -96,7 +96,7 @@ open class LinearProgressBar: UIView {
             lineWidth: barThickness + trackPadding,
             begin: beginPoint,
             end: CGPoint(x: frame.size.width - barPadding - trackOffset, y: frame.size.height / 2),
-            lineCap: .round,
+            lineCap: .square,
             strokeColor: trackColor
         )
         
@@ -108,7 +108,7 @@ open class LinearProgressBar: UIView {
             lineWidth: barThickness,
             begin: beginPoint,
             end: CGPoint(x: barPadding + trackOffset + calculatePercentage(), y: frame.size.height / 2),
-            lineCap: .round,
+            lineCap: .square,
             strokeColor: colorForBar
         )
     }
